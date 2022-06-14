@@ -1,7 +1,7 @@
 import { useGetPolicyDataQuery } from "store/api/apiSlice";
 import MainTitle from "components/titles/mainTitle";
 import PageContainer from "components/layout/PageContainer";
-import MainPolicyCard from "components/cards/MainPolicyCard";
+import MainPolicyCardContainer from "components/cards/mainPolicyCardContainer/MainPolicyCardContainer";
 
 
 function Main() {
@@ -12,7 +12,7 @@ function Main() {
     return (
         <PageContainer>
             <MainTitle name={firstName} />
-            <MainPolicyCard />
+            <MainPolicyCardContainer />
         </PageContainer>
     )
 }
