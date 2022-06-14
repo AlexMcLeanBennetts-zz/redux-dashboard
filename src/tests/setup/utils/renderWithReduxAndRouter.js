@@ -3,13 +3,12 @@ import { render as rtlRender } from '@testing-library/react';
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import { MemoryRouter } from "react-router-dom";
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory } from 'history'
 
 import { apiSlice } from 'store/api/apiSlice';
 
 function render(
-    component,
+    ui,
     {
         preloadedState,
         store = configureStore({
@@ -24,21 +23,18 @@ function render(
         ...renderOptions
     } = {}
 ) {
-
-    const history = createMemoryHistory({
-        initialEntries: [route],
-    });
-
+    const history = createMemoryHistory()
+    window.history.pushState({}, '/amend-policy-details', route)
     function Wrapper({ children }) {
         return (
             <Provider store={store}>
-                <Router history={history}>
+                <Router location={history.location} navigator={history}>
                     {children}
                 </Router>
             </Provider>
         )
     }
-    return rtlRender(component, { wrapper: Wrapper, ...renderOptions })
+    return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
 }
 
 //re-export everything
