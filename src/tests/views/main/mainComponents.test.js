@@ -1,5 +1,6 @@
 import { screen, render } from 'tests/setup/utils/test-utils'
 import Main from 'views/Main';
+import testData from 'tests/mocks/data/testData';
 
 
 describe('On the main component it should have', () => {
@@ -13,11 +14,23 @@ describe('On the main component it should have', () => {
 
     })
 
-    it('A button to make changes to the policy', () => {
+    it('A button to make changes to the policy', async () => {
 
-        const makeAChangeButton = screen.getByRole('button', { name: 'Make A Change' });
+        const makeAChangeButton = await screen.findByRole('button', { name: 'Make A Change' });
         expect(makeAChangeButton).toBeInTheDocument();
 
+    })
+
+    it('The make and model of the car displayed', async () => {
+        const makeAndModel = `${testData.car.make} ${testData.car.model}`;
+
+        const makeAndModelInDocument = await screen.findByText(makeAndModel);
+        expect(makeAndModelInDocument).toBeInTheDocument();
+    })
+
+    it('should display the registration', async () => {
+        const registrationText = await screen.findByText(testData.car.registration);
+        expect(registrationText).toBeInTheDocument();
     })
 
 })
