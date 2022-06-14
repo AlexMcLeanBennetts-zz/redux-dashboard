@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+
+import 'assets/styles/output.css'
+import Main from "views/Main";
+import AmendPolicyDetails from "views/AmendPolicyDetails";
+import LoadingContainer from 'components/LoadingContainer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoadingContainer>
+      <Routes>
+        <Route path='/amend-policy-details' element={<AmendPolicyDetails />} />
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </LoadingContainer>
   );
 }
 

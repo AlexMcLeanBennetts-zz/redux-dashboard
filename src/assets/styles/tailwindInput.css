@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icon::before {
+    background-image: url(assets/svg/account.svg);
+    height: 90%;
+    width: 90%;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    content: "";
+    display: inline-block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.icon::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
