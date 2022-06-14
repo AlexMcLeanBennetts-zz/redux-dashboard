@@ -26,3 +26,7 @@
 .icon-account::before {
     background-image: url(assets/svg/account.svg)
 }
+
+.icon-car::before {
+    background-image: url(assets/svg/hire-car.svg)
+}
