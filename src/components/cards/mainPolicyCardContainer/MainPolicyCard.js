@@ -9,7 +9,8 @@ function MainPolicyCard({
     formattedStartDate,
     formattedEndDate,
     carMakeAndModelTextFormatted,
-    NCBTextFormatted
+    NCBTextFormatted,
+    policyNumberFormatted
 }) {
     return (
         <CardContainer>
@@ -32,12 +33,12 @@ function MainPolicyCard({
                 <div className='w-6/12'>
                     <div className="flex items-center">
                         <div className='w-28 h-28 inline-block relative rounded bg-gray-300'>
-                            <div className='icon-car'></div>
+                            <div className='icon icon-car'></div>
                         </div>
                         <div className="px-8">
                             <h2 className='font-sans font-bold text-lg mb-0.5'>Your Car</h2>
                             <p className='mb-3'>{carMakeAndModelTextFormatted}</p>
-                            <p className="bg-amber-300 py-2 px-4 rounded">{carDetails.carRegistration}</p>
+                            <p className="bg-amber-300 py-2 px-4 rounded">{carDetails.registration}</p>
                         </div>
                     </div>
                     <RouterButton
