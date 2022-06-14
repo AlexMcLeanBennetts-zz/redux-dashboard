@@ -1,7 +1,7 @@
 import App from "App";
 import { rest } from 'msw';
 import { server } from 'tests/mocks/server';
-import { screen, render } from 'tests/utils/test-utils';
+import { screen, render } from 'tests/setup/utils/test-utils';
 
 describe('When there is an error when fetching data', () => {
     it('shows on the screen the error', async () => {
