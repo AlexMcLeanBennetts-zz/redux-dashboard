@@ -2,7 +2,7 @@ import { server } from 'tests/mocks/server';
 import { rest } from 'msw';
 import testData from 'tests/mocks/data/testData';
 
-import { screen, render } from 'tests/setup/utils/test-utils'
+import { screen, render } from 'tests/setup/utils/renderWithReduxAndRouter'
 import Main from 'views/Main';
 
 describe('When there is incomplete data', () => {

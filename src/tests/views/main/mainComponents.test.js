@@ -1,4 +1,4 @@
-import { screen, render } from 'tests/setup/utils/test-utils'
+import { screen, render } from 'tests/setup/utils/renderWithReduxAndRouter'
 import Main from 'views/Main';
 import testData from 'tests/mocks/data/testData';
 
