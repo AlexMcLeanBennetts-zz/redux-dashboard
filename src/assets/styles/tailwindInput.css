@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .icon::before {
-    background-image: url(assets/svg/account.svg);
     height: 90%;
     width: 90%;
     background-position: 50%;
@@ -22,4 +21,8 @@
     content: "";
     display: block;
     padding-bottom: 100%;
+}
+
+.icon-account::before {
+    background-image: url(assets/svg/account.svg)
 }
