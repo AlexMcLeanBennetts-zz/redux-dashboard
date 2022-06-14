@@ -33,4 +33,9 @@ describe('On the main component it should have', () => {
         expect(registrationText).toBeInTheDocument();
     })
 
+    it('Should have a button to view more details', async () => {
+        const viewPolicyDetailsButton = await screen.findByRole('button', { name: "View Policy Details" });
+        expect(viewPolicyDetailsButton).toBeInTheDocument();
+    })
+
 })
