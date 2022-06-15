@@ -3,7 +3,7 @@ import Main from 'views/Main';
 import testData from 'tests/mocks/data/testData';
 
 
-describe('On the main component it should have', () => {
+describe('The main component should display a limited overview on the details of the policy', () => {
     beforeEach(() => {
         render(<Main />);
     })
@@ -52,7 +52,20 @@ describe('On the main component it should have', () => {
         const activePolicyIndicator = await screen.findByTestId('policyStatusIndicator')
         expect(activePolicyIndicator).toHaveClass('bg-green-600');
     })
+    it('should have the policy number', async () => {
+        const policyNumeber = await screen.findByText(testData.policyNumber);
+        expect(policyNumeber).toBeInTheDocument();
+    })
+    it('should have the policy start and end date in the correct format', async () => {
+        const startAndEndDate = await screen.findByText(/3rd Apr 22 - 2nd Apr 23/i)
+        expect(startAndEndDate).toBeInTheDocument();
+    })
+    it('should show the number of years for no claims', async () => {
+        const noClaimsTitle = await screen.findByText('No Claims Discount');
+        const noClaimsAmount = noClaimsTitle.nextElementSibling.textContent;
 
+        expect(noClaimsAmount).toEqual('0');
+    })
 })
 
 
