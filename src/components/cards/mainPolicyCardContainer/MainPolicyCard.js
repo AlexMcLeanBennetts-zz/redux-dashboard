@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
-import CardContainer from "components/utilities/CardComponent"
+import CardContainer from "components/utilities/CardPresentational/CardComponent"
 import RouterButton from "components/buttons/RouterButton"
 import PolicyStatus from "components/utilities/PolicyStatus"
+import SmallH2 from "components/titles/Smallh2"
+import CardFlexContainer from "components/utilities/CardPresentational/CardFlexContainer"
+import BoldH3 from "components/titles/BoldH3"
 
 function MainPolicyCard({
     carDetails,
@@ -29,18 +32,19 @@ function MainPolicyCard({
                     />
                 </div>
             </div>
-            <div className='flex p-6'>
+            <CardFlexContainer>
                 <div className='w-6/12'>
                     <div className="flex items-center">
                         <div className='w-28 h-28 inline-block relative rounded bg-gray-300'>
                             <div className='icon icon-car'></div>
                         </div>
                         <div className="px-8">
-                            <h2 className='font-sans font-bold text-lg mb-0.5'>Your Car</h2>
+                            <SmallH2>Your Car</SmallH2>
                             <p className='mb-3'>{carMakeAndModelTextFormatted}</p>
                             <p className="bg-amber-300 py-2 px-4 rounded">{carDetails.registration}</p>
                         </div>
                     </div>
+
                     <RouterButton
                         text="View policy details"
                         styles='bg-slate-200 hover:bg-slate-300 text-fuchsia-900 rounded py-3 px-5 mx-auto mt-10'
@@ -54,16 +58,16 @@ function MainPolicyCard({
                             <p data-testid='policyNumber' className='mb-3'><span className='font-bold'>Policy Number:</span> {policyNumberFormatted}</p>
                         </div>
                         <div className="mb-3">
-                            <h3 className='font-bold'>Policy start and end date</h3>
+                            <BoldH3>Policy start and end date</BoldH3>
                             <p>{formattedStartDate} - {formattedEndDate}</p>
                         </div>
                         <div>
-                            <h3 className='font-bold'>No Claims Discount</h3>
+                            <BoldH3>No Claims Discount</BoldH3>
                             <p data-testid='NCB-text'>{NCBTextFormatted}</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </CardFlexContainer>
         </CardContainer>
     )
 }
