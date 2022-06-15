@@ -1,4 +1,4 @@
-import { screen, render } from 'tests/setup/utils/renderWithReduxAndRouter'
+import { screen, render } from 'tests/utils/setup/renderWithReduxAndRouter'
 import Main from 'views/Main';
 import testData from 'tests/mocks/data/testData';
 
@@ -44,5 +44,15 @@ describe('On the main component it should have', () => {
         expect(makeAChangeButton).toHaveAttribute('href', '/policy');
     })
 
+    it('should show if the policy is active', async () => {
+        const activePolicy = await screen.findByText('Active Policy');
+        expect(activePolicy).toBeInTheDocument();
+    })
+    it('should have a green indicator next to the active policy text', async () => {
+        const activePolicyIndicator = await screen.findByTestId('policyStatusIndicator')
+        expect(activePolicyIndicator).toHaveClass('bg-green-600');
+    })
 
 })
+
+
