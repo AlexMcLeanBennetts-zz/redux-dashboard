@@ -39,4 +39,10 @@ describe('On the main component it should have', () => {
         expect(viewPolicyDetailsButton).toBeInTheDocument();
     })
 
+    it('The button should have the link to the view policy details page', async () => {
+        const makeAChangeButton = await screen.findByRole('link', { name: /View policy details/i });
+        expect(makeAChangeButton).toHaveAttribute('href', '/policy');
+    })
+
+
 })
