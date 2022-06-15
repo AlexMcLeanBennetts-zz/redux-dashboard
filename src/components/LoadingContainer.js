@@ -8,6 +8,9 @@ function LoadingContainer({ children }) {
         isError,
         error
     } = useGetPolicyDataQuery()
+    if (isError) {
+        console.log(error)
+    }
 
     return (
         <>
