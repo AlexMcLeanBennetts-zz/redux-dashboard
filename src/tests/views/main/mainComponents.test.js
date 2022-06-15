@@ -11,20 +11,15 @@ describe('On the main component it should have', () => {
 
         const greetingMessage = await screen.findByText(/Welcome back, Steve!/i)
         expect(greetingMessage).toBeInTheDocument();
-
     })
 
     it('A button to make changes to the policy', async () => {
-
         const makeAChangeButton = await screen.findByRole('button', { name: 'Make A Change' });
         expect(makeAChangeButton).toBeInTheDocument();
-
     })
     it('The button should have the link to the amend policy page', async () => {
-
         const makeAChangeButton = await screen.findByRole('link', { name: /make a change/i });
         expect(makeAChangeButton).toHaveAttribute('href', '/amend-policy-details');
-
     })
 
     it('The make and model of the car displayed', async () => {
