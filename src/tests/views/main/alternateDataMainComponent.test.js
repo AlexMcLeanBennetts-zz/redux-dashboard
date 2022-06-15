@@ -4,7 +4,6 @@ import testData from 'tests/mocks/data/testData';
 import resetServer from 'tests/utils/functions/resetServer';
 
 import { screen, render } from 'tests/utils/setup/renderWithReduxAndRouter'
-import Main from 'views/Main';
 
 describe('When there is incomplete data', () => {
     it('if there is no name it shows "guest" instead', async () => {
