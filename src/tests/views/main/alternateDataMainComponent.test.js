@@ -41,15 +41,37 @@ describe('When the policy is lapsed', () => {
     })
 })
 
-describe('When the customer has multiple years of NCD', () => {
-    it('displays the number and then "years" afterward', async () => {
+describe('The No claims discount text changes depending on the amount of years', () => {
+    it('when there are multiple years it displays the number and then "years" afterward', async () => {
         let response = { ...testData };
         response.policyHolder.NCB = 3;
         resetServer(response);
 
         render(<App />)
 
-        const ncdDiscount = await screen.findByText('3 Years');
+        const ncdDiscount = await screen.findByText('3 years');
+        expect(ncdDiscount).toBeInTheDocument();
+    })
+    it('when is a single years it displays the number and then "year" afterward', async () => {
+        let response = { ...testData };
+        response.policyHolder.NCB = 1;
+        resetServer(response);
+
+        render(<App />)
+
+        const ncdDiscount = await screen.findByText('1 year');
+        expect(ncdDiscount).toBeInTheDocument();
+    })
+    it('when there is no years it displays some text', async () => {
+        let response = { ...testData };
+        response.policyHolder.NCB = 0;
+        resetServer(response);
+
+        render(<App />)
+
+        const ncdDiscount = await screen.findByText("You currently do not have any No Claims Discount");
         expect(ncdDiscount).toBeInTheDocument();
     })
 })
+
+

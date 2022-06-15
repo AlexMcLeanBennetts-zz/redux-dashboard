@@ -64,7 +64,7 @@ describe('The main component should display a limited overview on the details of
         const noClaimsTitle = await screen.findByText('No Claims Discount');
         const noClaimsAmount = noClaimsTitle.nextElementSibling.textContent;
 
-        expect(noClaimsAmount).toEqual('0');
+        expect(noClaimsAmount).toEqual('1 year');
     })
 })
 
