@@ -16,15 +16,19 @@ function MainPolicyCardContainer() {
             `${policyData.car.make} ${policyData.car.model}` :
             'Error: No car details found';
 
-        let NCBTextFormatted = policyData.policyDetails.NCB > 0 ?
-            `${policyData.policyDetails?.NCB} years` :
-            '0';
+        let NCBTextFormatted
+        let NCB = policyData.policyHolder.NCB.toString();
+        if (NCB > '1') {
+            NCBTextFormatted = `${NCB} years`;
+        } else if (NCB === '1') {
+            NCBTextFormatted = `${NCB} year`;
+        } else {
+            NCBTextFormatted = 'You currently do not have any No Claims Discount'
+        }
 
         let policyNumberFormatted = policyData?.policyNumber ?
             policyData.policyNumber :
             'Error: no policy number found';
-
-
 
 
         return (
