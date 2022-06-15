@@ -20,6 +20,12 @@ describe('On the main component it should have', () => {
         expect(makeAChangeButton).toBeInTheDocument();
 
     })
+    it('The button should have the link to the amend policy page', async () => {
+
+        const makeAChangeButton = await screen.findByRole('link', { name: /make a change/i });
+        expect(makeAChangeButton).toHaveAttribute('href', '/amend-policy-details');
+
+    })
 
     it('The make and model of the car displayed', async () => {
         const makeAndModel = `${testData.car.make} ${testData.car.model}`;
