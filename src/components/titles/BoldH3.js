@@ -1,5 +1,5 @@
 function BoldH3({ children }) {
-    <h3 clanssName="font-bold">{children}</h3>
+    return <h3 className="font-bold">{children}</h3>
 }
 
 export default BoldH3;
