@@ -16,14 +16,14 @@ function MainPolicyCardContainer() {
             `${policyData.car.make} ${policyData.car.model}` :
             'Error: No car details found';
 
-        let NCBTextFormatted
-        let NCB = policyData.policyHolder.NCB.toString();
-        if (NCB > '1') {
-            NCBTextFormatted = `${NCB} years`;
-        } else if (NCB === '1') {
-            NCBTextFormatted = `${NCB} year`;
+        let noClaimsBonusTextFormatted
+        let amountOfNoClaimsBonusYears = policyData.policyHolder.NCB.toString();
+        if (amountOfNoClaimsBonusYears > '1') {
+            noClaimsBonusTextFormatted = `${amountOfNoClaimsBonusYears} years`;
+        } else if (amountOfNoClaimsBonusYears === '1') {
+            noClaimsBonusTextFormatted = `${amountOfNoClaimsBonusYears} year`;
         } else {
-            NCBTextFormatted = 'You currently do not have any No Claims Discount'
+            noClaimsBonusTextFormatted = 'You currently do not have any No Claims Discount'
         }
 
         let policyNumberFormatted = policyData?.policyNumber ?
@@ -36,7 +36,7 @@ function MainPolicyCardContainer() {
                 carDetails={policyData.car}
                 policyDetails={policyData.policyDetails}
                 carMakeAndModelTextFormatted={carMakeAndModelTextFormatted}
-                NCBTextFormatted={NCBTextFormatted}
+                NCBTextFormatted={noClaimsBonusTextFormatted}
                 policyNumberFormatted={policyNumberFormatted}
                 formattedStartDate={formattedStartDate}
                 formattedEndDate={formattedEndDate}

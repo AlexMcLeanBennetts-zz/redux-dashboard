@@ -1,4 +1,4 @@
-import CardContainer from "components/utilities/CardPresentational/CardComponent"
+import CardContainer from "components/utilities/CardPresentational/CardContainer"
 import RouterButton from "components/buttons/RouterButton"
 import PolicyStatus from "components/utilities/PolicyStatus"
 import SmallH2 from "components/titles/Smallh2"
