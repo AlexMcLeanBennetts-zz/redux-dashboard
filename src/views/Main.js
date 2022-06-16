@@ -2,6 +2,7 @@ import { useGetPolicyDataQuery } from "store/api/apiSlice";
 import MainTitle from "components/titles/mainTitle";
 import PageContainer from "components/layout/PageContainer";
 import MainPolicyCardContainer from "components/cards/mainPolicyCardContainer/MainPolicyCardContainer";
+import IconRouteContainer from "components/iconRoutes/IconRouteContainer";
 
 
 function Main() {
@@ -13,6 +14,7 @@ function Main() {
         <PageContainer>
             <MainTitle name={firstName} />
             <MainPolicyCardContainer />
+            <IconRouteContainer />
         </PageContainer>
     )
 }
