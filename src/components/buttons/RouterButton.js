@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 
-function Button({
+function RouterButton({
     path,
     text,
     icon,
     styles,
     disabled,
 }) {
+    let formatedStyles;
+    if (styles === 'white') {
+        formatedStyles = "bg-white text-fuchsia-900 whitespace-nowrap px-5 py-2 rounded hover:shadow-lg hover:scale-110"
+    }
     return (
         <Link to={path}>
             <button
-                className={styles}
+                className={formatedStyles}
                 disabled={disabled}
             >
                 {text}
@@ -20,4 +24,4 @@ function Button({
     );
 }
 
-export default Button;
+export default RouterButton;

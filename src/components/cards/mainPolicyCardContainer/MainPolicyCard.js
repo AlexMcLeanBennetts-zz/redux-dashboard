@@ -27,7 +27,7 @@ function MainPolicyCard({
                     <RouterButton
                         text='Make A Change'
                         path='/amend-policy-details'
-                        styles='bg-white text-fuchsia-900 whitespace-nowrap px-5 py-2 rounded hover:shadow-lg hover:scale-110'
+                        styles='white'
                     />
                 </div>
             </div>
