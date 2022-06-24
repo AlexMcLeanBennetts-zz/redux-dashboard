@@ -30,3 +30,16 @@
 .icon-car::before {
     background-image: url(assets/svg/hire-car.svg)
 }
+
+.CTA-container::before {
+    background-image: url(assets/svg/background-cta.png);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-size: 115%;
+    left: -5rem;
+}
